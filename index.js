@@ -36,9 +36,23 @@ function promptUser() {
             name: "project",
             message: "What is the name of your project?"
         }
-    ]);
+    ])
+    .then(function({ username }) {
+        const queryUrl = `https://api.github.com/users/${githubUsername}/repos?per_page=100`;
+
+        axios.get(queryUrl).then(function(res) {
+            const 
+        });
+    });
 };
+
+
    
+// Using axios to call GitHub API
+axios
+    .get(https://api.github.com")
+
+
 function createReadMe(answers) {
     return `
     Project Title: ${answers.project}
