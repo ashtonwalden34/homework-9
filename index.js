@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const util = require("util");
 const fs = require("fs");
 const generateMardown = require("./utils/generateMarkdown");
+// const getBadge = require("./utils/getBadge");
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -56,9 +57,9 @@ function askQuestions() {
  };
 
 
-
 askQuestions()
     .then(function(inquirerResponses) {
         const README = generateMardown(inquirerResponses);
+        //const badge = getBadge();
         return writeFileAsync("README.md", README, inquirerResponses);
     });
