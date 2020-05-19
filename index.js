@@ -5,7 +5,7 @@ const generateMardown = require("./utils/generateMarkdown");
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
-function promptUser() {
+function askQuestions() {
     return inquirer.prompt([
         {
             type: "input",
@@ -57,62 +57,8 @@ function promptUser() {
 
 
 
-promptUser()
+askQuestions()
     .then(function(inquirerResponses) {
         const README = generateMardown(inquirerResponses);
-
         return writeFileAsync("README.md", README, inquirerResponses);
     });
-    
-    /*
-    .then(function() {
-        console.log("wrote to md file")
-    })
-    .catch(function(err) {
-        console.log(err)
-    });
-    */
-
-
-
-
-
-
-
-
-
- /*
- function populateMd(inquirerResponses) {
-    fs.writeFileAsync("README.md", generateMardown, inquirerResponses)
-};
-
-promptUser().then(function(inquirerResponses) {
-    populateMd(inquirerResponses);
-});
-
-
-
-fs.writeFileAsync("README.md", generateMarkdwon, function(err)
-{
-    if (err) {
-        console.log(err);
-    }else {
-        console.log("success");
-    }
-});
-*/
-
-
-
-
-
-
-/*
-function init() {
-    promptUser().then((inquirerResponses) => {
-        writeToFile("README.md", generateMardown, inquirerResponses);
-    })
-};
-
-init();
-*/
