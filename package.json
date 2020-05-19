@@ -1,7 +1,7 @@
 {
   "name": "static-site",
   "version": "1.0.0",
-  "description": "",
+  "description": "Description: This project is designed to take user input and provide them with a quality README page.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +11,14 @@
   "dependencies": {
     "dotenv": "^8.0.0",
     "inquirer": "^6.5.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashtonwalden34/homework-9.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ashtonwalden34/homework-9/issues"
+  },
+  "homepage": "https://github.com/ashtonwalden34/homework-9#readme"
 }
